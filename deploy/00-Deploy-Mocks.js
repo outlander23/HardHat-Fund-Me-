@@ -3,11 +3,10 @@ const {
   networkConfig,
   developmentChains,
   DECIMALS,
-  INITIAL_ANSWER,
+  INITIAL_PRICE,
 } = require("../helper.hardhat.config");
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
-  console.log("____________________ MockV3Aggregator____________________");
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
   const chainId = network.config.chainId;
@@ -17,10 +16,17 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
       contract: "MockV3Aggregator",
       from: deployer,
       log: true,
-      args: [DECIMALS, INITIAL_ANSWER],
+      args: [DECIMALS, INITIAL_PRICE],
     });
     log("Mocks Deployed!");
-    log("________________________________________");
+    log("------------------------------------------------");
+    log(
+      "You are deploying to a local network, you'll need a local network running to interact"
+    );
+    log(
+      "Please run `npx hardhat console` to interact with the deployed smart contracts!"
+    );
+    log("------------------------------------------------");
   }
 };
 

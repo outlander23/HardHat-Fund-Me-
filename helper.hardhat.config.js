@@ -10,8 +10,8 @@ const networkConfig = {
 };
 
 const DECIMALS = 8;
-const INITIAL_ANSWER = 2000000000000;
+const INITIAL_PRICE = 2000000000000;
 
 const developmentChains = ["hardhat", "localhost"];
 
-module.exports = { networkConfig, developmentChains, DECIMALS, INITIAL_ANSWER };
+module.exports = { networkConfig, developmentChains, DECIMALS, INITIAL_PRICE };

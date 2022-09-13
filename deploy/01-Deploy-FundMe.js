@@ -37,3 +37,4 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   }
   log("_______________________________________");
 };
+module.exports.tags = ["all", "fundme"];
